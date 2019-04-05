@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  tas.sl.api:
+    image: servico-lances
+    build: .
+    enviromment:
+      NODE_ENV: production
+    ports:
+     - 3000:3000
