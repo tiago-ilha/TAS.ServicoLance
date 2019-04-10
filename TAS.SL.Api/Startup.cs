@@ -9,6 +9,8 @@ using TAS.SL.Infra;
 using Swashbuckle.AspNetCore.Swagger;
 using AutoMapper;
 using TAS.SL.Dominio;
+using TAS.SL.Dominio.Eventos;
+using TAS.SL.Dominio.Eventos.Manipuladores;
 
 namespace TAS.SL.Api
 {
@@ -34,6 +36,10 @@ namespace TAS.SL.Api
             });
 
             services.AddScoped<ILanceRepositorio, LanceRepositorio>();
+
+            services.AddScoped<IManipularDeEvento<AprovarLance>, AprovandoLance>();
+
+            DisparadorDeEventos.Init();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,11 +61,17 @@ namespace TAS.SL.Api
                 DbInicializacao.Popular(context);
             }
 
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+            });
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
             app.UseSwagger();
-
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Serviço cadastro de lances");
             });

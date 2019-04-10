@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TAS.SL.Dominio.Eventos;
 
 namespace TAS.SL.Dominio
 {
-    public class Lance : Notifiable
+    public class Lance : Entidade
     {
         public Lance(Guid idAnuncio, decimal valor)
         {
@@ -22,6 +23,8 @@ namespace TAS.SL.Dominio
         public void Aprovar()
         {
             Fechado = true;
+
+            AdicionarEvento(new AprovarLance(IdAnuncio));
         }
     }
 }

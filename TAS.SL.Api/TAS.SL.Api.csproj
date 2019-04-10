@@ -1,25 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="Flunt" Version="1.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.3" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0"/>
+    <PackageReference Include="Flunt" Version="1.0.3"/>
+    <PackageReference Include="Microsoft.AspNetCore.App"/>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.3"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1"/>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1"/>
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\TAS.SL.Dominio\TAS.SL.Dominio.csproj" />
-    <ProjectReference Include="..\TAS.SL.Infra\TAS.SL.Infra.csproj" />
+    <ProjectReference Include="..\TAS.SL.Dominio\TAS.SL.Dominio.csproj"/>
+    <ProjectReference Include="..\TAS.SL.Infra\TAS.SL.Infra.csproj"/>
   </ItemGroup>
-
 </Project>
